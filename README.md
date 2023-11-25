@@ -6,8 +6,9 @@ First clone this repository, install the dependencies, and setup your .env file.
 
 ```
 git clone git@github.com:3omarbadr/mbn.git
-composer install
 cp .env.example .env
+php artisan key:generate
+composer install
 ```
 
 Then create the necessary database.
