@@ -37,11 +37,14 @@ class RolesPermissionsSeeder extends Seeder
                 'database management',
                 'repository management',
             ],
-            'analyst' => [
+            'supervisor' => [
                 'content management',
                 'financial management',
                 'reporting',
                 'payroll',
+            ],
+            'delegate' => [
+
             ],
             'support' => [
                 'reporting',
@@ -68,5 +71,7 @@ class RolesPermissionsSeeder extends Seeder
 
         User::find(1)->assignRole('administrator');
         User::find(2)->assignRole('developer');
+        User::find(3)->assignRole('supervisor');
+        User::find(4)->assignRole('delegate');
     }
 }

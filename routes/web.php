@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\Apps\PermissionManagementController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Apps\ContractController;
+use App\Http\Controllers\Auth\SocialiteController;
+use App\Http\Controllers\Apps\CommissionController;
 use App\Http\Controllers\Apps\RoleManagementController;
 use App\Http\Controllers\Apps\UserManagementController;
-use App\Http\Controllers\Auth\SocialiteController;
-use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Apps\PermissionManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('/user-management/roles', RoleManagementController::class);
         Route::resource('/user-management/permissions', PermissionManagementController::class);
     });
+
+    Route::resource('contracts', ContractController::class);
+    Route::resource('commissions', CommissionController::class);
 
 });
 
