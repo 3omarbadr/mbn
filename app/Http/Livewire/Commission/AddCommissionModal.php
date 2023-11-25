@@ -79,16 +79,12 @@ class AddCommissionModal extends Component
 
     private function calculateCommissionPercentage($maxCounter)
     {
-        switch (true) {
-            case $maxCounter <= 10:
-                return self::LOW_RATE;
-            case $maxCounter <= 15:
-                return self::MEDIUM_RATE;
-            case $maxCounter > 20:
-                return self::HIGH_RATE;
-            default:
-                return 0; // Default commission rate
-        }
+        return match (true) {
+            $maxCounter <= 10 => self::LOW_RATE,
+            $maxCounter <= 15 => self::MEDIUM_RATE,
+            $maxCounter > 20 => self::HIGH_RATE,
+            default => 0, // Default commission rate
+        };
     }
 
 
